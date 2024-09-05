@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'POS Order Signature | POS Signature',
+    'name': 'POS_Order_Signature | POS Signature',
     'category': 'Point of Sale',
     'summary': 'This module help you to add signature on pos order and receipt | POS Signature | Signature on POS Receipt | POS Order Receipt Signature',
     'description': """
