@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pw_pos_signature.PaymentScreenTop" t-inherit="point_of_sale.PaymentScreenTop" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('top-content-center')]" position="after">
+            <t t-if="pos.config.pw_enable_signature">
+                <div class="button btn btn-lg btn-secondary" t-on-click="addSignature">
+                    <i class="fa fa-pencil me-2" />
+                    <span class="back_text">Add Signature</span>
+                </div>
+            </t>
+        </xpath>
+    </t>
+    <t t-name="pw_pos_signature.PwSignaturePopup">
+        <div class="popup popup-selection">
+            <div class="popup popup-textinput">
+                <div class="modal-header">
+                    <h4 class="modal-title"><t t-esc="props.title" /></h4>
+                </div>
+                <div class="modal-body">
+                    <div style="height: 180px;">
+                        <div id="pw_signature" class="pw_signature" style="padding-top:15px;"></div>
+                    </div>
+                </div>
+                <footer class="footer cash-move modal-footer">
+                    <button class="button confirm btn btn-lg btn-primary"
+                        t-on-click="confirm">
+                        Add
+                    </button>
+                    <div class="button clear btn btn-lg btn-secondary" t-on-click="clear">
+                        Clear
+                    </div>
+                    <button class="button cancel btn btn-lg btn-secondary" t-on-click="cancel">
+                        Cancel
+                    </button>
+                </footer>
+            </div>
+        </div>
+    </t>
+    <t t-name="pw_pos_signature.OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('pos-receipt')]" position="inside">
+            <t t-if="props.data.pw_signature">
+                <div style="text-align: right;">
+                    <div>
+                        <img style="width: 130px;height: 70px;padding-top: 20px;" t-att-src="'data:image/gif;base64,'+ props.data.pw_signature[1]" />
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>
