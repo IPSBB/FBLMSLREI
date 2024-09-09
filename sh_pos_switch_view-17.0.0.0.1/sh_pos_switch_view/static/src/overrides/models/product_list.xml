@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="sh_pos_switch_view.ProductsWidget" t-inherit="point_of_sale.ProductsWidget" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('product-list-container')]" position="attributes">
+            <attribute name="t-if">!this.pos.config.sh_pos_switch_view or this.pos.product_view == 'grid' </attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('products-widget-control')]" position="after">
+            <t t-if="this.pos.config.sh_pos_switch_view">
+                <div class="product_grid sh_product_grid">
+                    <div class="product_list sh_product_list">
+                        <t t-if="this.pos.product_view == 'list'">
+                            <table>
+                                <thead>
+                                    <t t-if="this.pos.config.sh_display_product_image">
+                                        <th>Image</th>
+                                    </t>
+                                    <t t-if="this.pos.config.sh_display_product_name">
+                                        <th>Name</th>
+                                    </t>
+                                    <t t-if="this.pos.config.sh_display_product_code">
+                                        <th>Code</th>
+                                    </t>
+                                    <t t-if="this.pos.config.sh_display_product_type">
+                                        <th>Type</th>
+                                    </t>
+                                    <t t-if="this.pos.config.sh_display_product_onhand">
+                                        <th>On Hand</th>
+                                    </t>
+                                    <t t-if="this.pos.config.sh_display_product_forecasted">
+                                        <th>Forecasted</th>
+                                    </t>
+                                    <t t-if="this.pos.config.sh_display_product_uom">
+                                        <th>UOM</th>
+                                    </t>
+                                    <t t-if="this.pos.config.sh_display_product_price">
+                                        <th>Price</th>
+                                    </t>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="productsToDisplay" t-as="product" t-key="product.id">
+                                        <ProductListItem product="product" t-on-click="() =>this.pos.addProductToCurrentOrder(product)"/>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

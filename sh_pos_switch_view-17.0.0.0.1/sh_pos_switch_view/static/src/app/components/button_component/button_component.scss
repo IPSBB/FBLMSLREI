@@ -1,0 +1,22 @@
+.pos {
+    .sh_switch_view_icon {
+        display: flex;
+        align-items: center;
+        gap: 0 5px;
+
+        button {
+            font-size: 21px;
+            padding: 7px !important;
+
+            &.highlight {
+                background: $o-brand-primary !important;
+                color: #fff !important;
+            }
+
+            &.sh_highlight {
+                background-color: $o-brand-primary;
+                color: #fff !important;
+            }
+        }
+    }
+}

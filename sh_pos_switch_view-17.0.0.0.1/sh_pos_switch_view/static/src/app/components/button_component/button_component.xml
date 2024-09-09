@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="sh_pos_switch_view.button_component">
+        <div class="sh_switch_view_icon">
+            <button class="product_grid_view category-button btn btn-light d-flex flex-column align-items-center justify-content-center category-item p-1 overflow-hidden h-100 " t-attf-class="{{clickedProductGridView ? 'sh_highlight' : ''}}" t-on-click="onClickProductGridView">
+                <i class="fa fa-th"></i>
+            </button>
+        </div>
+        <div class="sh_switch_view_icon">
+            <button class="product_list_view category-button btn btn-light d-flex flex-column align-items-center justify-content-center category-item p-1 overflow-hidden h-100 " t-attf-class="{{clickedProductListView ? 'sh_highlight' : ''}}" t-on-click="onClickProductListView">
+                <i class="fa fa-list"></i>
+            </button>
+        </div>
+    </t>
+
+</templates>

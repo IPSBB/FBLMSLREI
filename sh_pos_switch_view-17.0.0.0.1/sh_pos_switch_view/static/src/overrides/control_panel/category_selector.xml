@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="sh_pos_switch_view.CategorySelector" t-inherit="point_of_sale.CategorySelector" t-inherit-mode="extension">
+        <xpath expr="//div[@t-foreach='props.categories']" position="before">
+            <t t-if="this.env.services.pos.config.sh_pos_switch_view">
+                <ViewModeButtons/>
+            </t>
+        </xpath>
+    </t>
+</templates>

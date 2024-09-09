@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="sh_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sh_pos_order_list</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="pos_interface_section" position="after">
+                <block title="Product Switch View">
+                    <setting string="Enable Product Switch View">
+                        <field name="pos_sh_pos_switch_view" />
+                        <div invisible="not pos_sh_pos_switch_view or pos_sh_default_view == 'grid_view'" >
+                            <div class="text-muted">
+                                Tick which detail want to display in List View
+                            </div>
+                            <field name="pos_sh_display_product_name" style="width: 4%;" />
+                            <label for="pos_sh_display_product_name" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_display_product_price" style="width: 4%;" />
+                            <label for="pos_sh_display_product_price" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_display_product_code" style="width: 4%;" />
+                            <label for="pos_sh_display_product_code" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_display_product_type" style="width: 4%;" />
+                            <label for="pos_sh_display_product_type" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_display_product_onhand" style="width: 4%;" />
+                            <label for="pos_sh_display_product_onhand" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_display_product_forecasted" style="width: 4%;" />
+                            <label for="pos_sh_display_product_forecasted" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_display_product_uom" style="width: 4%;" />
+                            <label for="pos_sh_display_product_uom" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_display_product_image" style="width: 4%;" />
+                            <label for="pos_sh_display_product_image" style="font-weight: normal;" /><br />
+
+                            <field name="pos_sh_product_image_size" widget="radio" invisible="not pos_sh_display_product_image"/>
+
+                        </div>
+                    </setting>
+                    <setting invisible="not pos_sh_pos_switch_view" string="Default Product View">
+                        <field name="pos_sh_default_view" widget="radio" />
+                    </setting>
+                </block>
+            </block>
+        </field>
+    </record>
+</odoo>

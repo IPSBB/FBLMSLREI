@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="sh_pos_switch_view.ProductListItem">
+
+        <tr t-on-keypress="(event) => event.which === 32 ? props.onClick(event) : ()=>{}" t-att-data-product-id="props.productId" t-attf-aria-labelledby="article_product_{{props.productId}}" class="1563">
+            <t t-if="pos.config.sh_display_product_image">
+                <td>
+                    <t t-if="pos.config.sh_product_image_size == 'small_size'">
+                        <img t-att-src="imageUrl" t-att-alt="props.product.display_name" class="small_size_image" />
+                    </t>
+                    <t t-if="pos.config.sh_product_image_size == 'medium_size'">
+                        <img t-att-src="imageUrl" t-att-alt="props.product.display_name" class="medium_size_image" />
+                    </t>
+                    <t t-if="pos.config.sh_product_image_size == 'large_size'">
+                        <img t-att-src="imageUrl" t-att-alt="props.product.display_name" class="large_size_image" />
+                    </t>
+                </td>
+            </t>
+            <t t-if="pos.config.sh_display_product_name">
+                <td>
+                    <t t-esc="props.product.display_name" />
+                </td>
+            </t>
+            <t t-if="pos.config.sh_display_product_code">
+                <td>
+                    <t t-if="props.product.default_code">
+                        <t t-esc="props.product.default_code" />
+                    </t>
+                    <t t-else="">
+                        -
+                    </t>
+                </td>
+            </t>
+            <t t-if="pos.config.sh_display_product_type">
+                <td>
+                    <t t-if="props.product.type == 'consu'">
+                        Comsumable
+                    </t>
+                    <t t-if="props.product.type == 'product'">
+                        Storable
+                    </t>
+                    <t t-if="props.product.type == 'service'">
+                        Service
+                    </t>
+                </td>
+            </t>
+            <t t-if="pos.config.sh_display_product_onhand">
+                <td>
+                    <t t-if="props.product.qty_available > 0">
+                        <t t-esc="props.product.qty_available" />
+                    </t>
+                    <t t-else="">
+                        0
+                    </t>
+                </td>
+            </t>
+            <t t-if="pos.config.sh_display_product_forecasted">
+                <td>
+                    <t t-if="props.product.virtual_available > 0">
+                        <t t-esc="props.product.virtual_available" />
+                    </t>
+                    <t t-else="">
+                        0
+                    </t>
+                </td>
+            </t>
+            <t t-if="pos.config.sh_display_product_uom">
+                <td>
+                    <t t-esc="props.product.uom_id[1]" />
+                </td>
+            </t>
+            <t t-if="pos.config.sh_display_product_price">
+                <td>
+                    <span class="price-tag">
+                        <t t-esc="price" />
+                    </span>
+                </td>
+            </t>
+        </tr>
+    </t>
+</templates>
