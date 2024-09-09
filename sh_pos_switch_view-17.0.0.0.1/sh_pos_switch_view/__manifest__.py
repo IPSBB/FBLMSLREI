@@ -1,6 +1,6 @@
 # Part of Softhealer Technologies.
 {
-    "name": "Point Of Sale Product Switch View",
+    "name": "Point_Of_Sale_Product_Switch_View",
     "author": "Softhealer Technologies",
     "website": "https://www.softhealer.com",
     "support": "support@softhealer.com",
