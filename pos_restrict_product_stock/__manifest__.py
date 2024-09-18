@@ -19,7 +19,7 @@
 #
 #############################################################################
 {
-    'name': 'Display Stock in POS | Restrict Out-of-Stock Products in POS',
+    'name': 'Display Stock in POS | Restrict_Out-of-Stock_Products_in_POS',
     'version': '17.0.1.0.0',
     'category': 'Point of Sale',
     'summary': """Enhance your Point of Sale experience by preventing the 
