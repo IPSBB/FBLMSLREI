@@ -20,7 +20,7 @@
 #
 #############################################################################
 {
-    'name': 'Advanced POS Reports',
+    'name': 'Advanced_POS_Reports',
     'version': '17.0.1.0.0',
     'category': 'Point of Sale',
     'summary': """Generates various reports from POS screen and reporting 
