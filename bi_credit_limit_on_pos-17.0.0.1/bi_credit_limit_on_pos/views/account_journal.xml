@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="bi_account_view_account_journal_form_inherit" model="ir.ui.view">
+            <field name="name">bi.account.journal.form.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//field[@name='active']" position="before">
+                        <field name="is_credit"/>
+                    </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_view_pos_payment_method_form1" model="ir.ui.view">
+            <field name="name">pos.payment.method.inherit</field>
+            <field name="model">pos.payment.method</field>
+            <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form"/>
+            <field name="arch" type="xml">
+                <field name="journal_id" position="after">
+                    <field name="is_credit" invisible="journal_id == False"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pos_sale_order_discount_type">
+            <field name="name">pos.order.view.discount.form</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <field name="amount_total" position="after">
+                    <field name="amount_paid" sum="Amount total" widget="monetary" decoration-bf="1"/>
+                </field>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="is_partial" invisible="1"/>
+                    <field name="amount_due" invisible="1"/>
+                    <field name="amount_paid"  invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_bi_website_portal_dashboard_inherit_view_partner_form" model="ir.ui.view">
+            <field name="name">bi.website.portal.dashboard.inherit.view.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']" position="inside">
+                    <group string="Credit Limit" name="CreditLimit">
+                        <field name="active_credit_limit"/>
+                        <field name="custom_credit" invisible="1"/>
+                        <field name="warning_amount" invisible="active_credit_limit == False"/>
+                        <field name="blocking_amount" invisible="active_credit_limit == False"/>
+                    </group>
+                </xpath>
+                <div name="button_box" position="inside">
+                    <button type="object" class="oe_stat_button" icon="fa-usd" name="action_view_credit_detail" context="{'default_partner_id': id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="custom_credit" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                            <span class="o_stat_text">POS Credit</span>
+                        </div>
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

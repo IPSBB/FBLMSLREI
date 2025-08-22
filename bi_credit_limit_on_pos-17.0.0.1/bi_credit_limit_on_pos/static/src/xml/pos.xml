@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="bi_loyalty_generic_template" inherit_id="point_of_sale.template" xml:space="preserve">
+	<t t-extend="PartnerListScreenWidget" t-inherit="point_of_sale.PartnerListScreen" t-inherit-mode="extension" owl="1">
+		<xpath expr="//table[hasclass('partner-list')]/thead/tr" position="inside">
+			<th>Credit</th>
+			<th>Credit Limit</th>
+		</xpath>
+	</t>
+	
+	<t t-name="PartnerLine" t-inherit="point_of_sale.PartnerLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tr[1]" position="inside">
+        	<td>
+				<t t-esc='props.partner.custom_credit or "0"' />
+            </td>
+			<td id="bal">
+				<t t-esc='props.partner.blocking_amount or "0"' />
+			</td>
+        </xpath>
+    </t>
+
+
+    <t t-name="bi_credit_limit_on_pos.BiWarningPopup" owl="1">
+        <div class="popup">
+            <div class="modal-header">
+                <h4 class="modal-title"><t t-esc="props.title"/></h4>
+            </div>
+            <div class="modal-body">
+                <t t-esc="props.body"/><br/><br/>
+                Current Credit: <t t-esc="props.custom_credit"/>.<br/>
+                Credit Limit: <t t-esc="props.blocking_amount"/>
+                
+            </div>
+
+
+            <footer class="footer modal-footer">
+                <button class="button confirm btn btn-lg btn-primary" t-on-click="confirm">
+                    OK
+                </button>
+            </footer>
+        </div>
+    </t>
+
+
+    <t t-name="bi_credit_limit_on_pos.BiWarningBlockingPopup" owl="1">
+        <div class="popup">
+            <div class="modal-header">
+                <h4 class="modal-title"><t t-esc="props.title"/></h4>
+            </div>
+            <div class="modal-body">
+                Credit Limit: <t t-esc="props.blocking_amount"/><br/>
+                Your Current Credit: <t t-esc="props.custom_credit"/><br/>
+                Please Pay using a different Payment Method.
+                
+            </div>
+
+
+            <footer class="footer modal-footer">
+                <button class="button confirm btn btn-lg btn-primary" t-on-click="confirm">
+                    OK
+                </button>
+            </footer>
+        </div>
+    </t>
+
+</templates>
