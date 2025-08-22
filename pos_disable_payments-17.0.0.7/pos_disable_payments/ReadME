@@ -1,0 +1,24 @@
+Version 17.0.0.1 (04/04/2024)
+    -- Fixed
+        - Make module compatible with pos_restaurant.
+
+Version : 17.0.0.2 (24/01/2025)
+    - fixed issue for keyboard access.
+
+
+Version : 17.0.0.3 (17/04/2025)
+    - fixed issue for disable payments.
+
+
+Version : 17.0.0.4 (21/04/2025)
+    - fixed issue for disable payments for mobile view and customer in restutant.
+
+
+Version : 17.0.0.5 (23/04/2025)
+    - Fixed issue for global discount button disabled.
+
+Version : 17.0.0.6 (30/04/2025)
+    - Fixed issue for allow payment while split order.
+
+Version 17.0.0.7 (01/05/2025) 
+    - Solved issue realted remove orderline functionality
