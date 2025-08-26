@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="wt_create_so_from_pos.SaleOrderButton">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.onClick()">
+            <i class="fa fa-pencil-square-o"/>
+            <span> </span>
+            <span>Create Sales Order</span>
+        </button>
+    </t>
+    
+    <t t-name="wt_create_so_from_pos.ViewSaleOrderButton">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.onClick()">
+            <i class="fa fa-eye"/>
+            <span> </span>
+            <span>View Sales Order</span>
+        </button>
+    </t>
+</templates>

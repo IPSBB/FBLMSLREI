@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="wt_create_so_from_pos.SaleOrderScreenWidget" owl="1">
+        <div class="order-management-screen screen" t-ref="root">
+            <div class="rightpane">
+                <div class="flex-container">
+                        <SaleOrderManagementControlPanel
+                            onSearch.bind="onSearch"
+                            onPrevPage.bind="onPrevPage"
+                            onNextPage.bind="onNextPage" />
+                        <SaleOrderList
+                        onClickSaleOrder.bind="_onClickSaleOrder"
+                        orders="orders"
+                        initHighlightedOrder="pos.orderManagement.selectedOrder" />
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
