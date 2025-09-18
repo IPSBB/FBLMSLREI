@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="PaymentScreenInh" t-inherit="point_of_sale.PaymentScreenMethods" t-inherit-mode="extension" owl="1">
+        <xpath expr="//t[@t-foreach='payment_methods_from_config']" position="replace">
+            <t t-foreach="payment_methods_from_config" t-as="paymentMethod" t-key="paymentMethod.id">
+                <t t-if="pos.config.pw_restrict_pm">
+                    <t t-if="currentOrder.get_partner() and currentOrder.get_partner().pw_pos_payment_ids.length">
+                        <t t-if="currentOrder.get_partner().pw_pos_payment_ids.includes(paymentMethod.id)">
+                            <div class="button paymentmethod btn btn-light rounded-0 border-bottom" t-on-click="() => this.addNewPaymentLine(paymentMethod)">
+                                <div class="payment-method-display d-flex align-items-center flex-grow-1">
+                                    <div>
+                                        <img class="payment-method-icon" t-att-src="paymentMethodImage(paymentMethod.id)" />
+                                    </div>
+                                    <span class="payment-name" t-esc="paymentMethod.name" />
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                    <t t-else="">
+                        <t t-if="pos.config.pw_payment_method_ids.includes(paymentMethod.id)">
+                            <div class="button paymentmethod btn btn-light rounded-0 border-bottom" t-on-click="() => this.addNewPaymentLine(paymentMethod)">
+                                <div class="payment-method-display d-flex align-items-center flex-grow-1">
+                                    <div>
+                                        <img class="payment-method-icon" t-att-src="paymentMethodImage(paymentMethod.id)" />
+                                    </div>
+                                    <span class="payment-name" t-esc="paymentMethod.name" />
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+                <t t-else="">
+                    <div class="button paymentmethod btn btn-light rounded-0 border-bottom" t-on-click="() => this.addNewPaymentLine(paymentMethod)">
+                        <div class="payment-method-display d-flex align-items-center flex-grow-1">
+                            <div>
+                                <img class="payment-method-icon" t-att-src="paymentMethodImage(paymentMethod.id)" />
+                            </div>
+                            <span class="payment-name" t-esc="paymentMethod.name" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </t>
+</templates>

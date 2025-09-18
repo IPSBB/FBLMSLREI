@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_config_view_form_inherit_pw_customer_pm" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos.default.pm</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_payment_section']" position="inside">
+                <setting help="Set default payment method for all or new customers">
+                    <field name="pw_restrict_pm"/>
+                    <div class="content-group mt16" invisible="not pw_restrict_pm">
+                        <field name="pw_payment_method_ids" widget="many2many_tags" colspan="4" domain="[('id', 'in', pos_payment_method_ids)]" options="{'no_create': True}"/>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
