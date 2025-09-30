@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Ensure all required currencies are active -->
+        <function model="res.currency" name="write">
+            <value model="res.currency" search="[('name', '=', 'CAD')]"/>
+            <value eval="{'active': True}"/>
+        </function>
+        <function model="res.currency" name="write">
+            <value model="res.currency" search="[('name', '=', 'EUR')]"/>
+            <value eval="{'active': True}"/>
+        </function>
+        <function model="res.currency" name="write">
+            <value model="res.currency" search="[('name', '=', 'CNY')]"/>
+            <value eval="{'active': True}"/>
+        </function>
+        <function model="res.currency" name="write">
+            <value model="res.currency" search="[('name', '=', 'JPY')]"/>
+            <value eval="{'active': True}"/>
+        </function>
+        <function model="res.currency" name="write">
+            <value model="res.currency" search="[('name', '=', 'BRL')]"/>
+            <value eval="{'active': True}"/>
+        </function>
+    
+        <!-- Vendor Bills - Create invoices from purchase orders after receipts are processed -->
+        
+        <!-- Make sure the invoice status is 'to invoice' by checking received quantities -->
+        <function model="purchase.order" name="_get_invoiced">
+            <value eval="[ref('demo_po_nafta'), ref('demo_po_eu'), ref('demo_po_asia'), ref('demo_po_network'), ref('demo_po_south_america')]"/>
+        </function>
+        
+        <!-- Create invoices from purchase orders using standard method -->
+        <function model="purchase.order" name="action_create_invoice">
+            <value eval="[ref('demo_po_nafta')]"/>
+        </function>
+        <function model="purchase.order" name="action_create_invoice">
+            <value eval="[ref('demo_po_eu')]"/>
+        </function>
+        <function model="purchase.order" name="action_create_invoice">
+            <value eval="[ref('demo_po_asia')]"/>
+        </function>
+        <function model="purchase.order" name="action_create_invoice">
+            <value eval="[ref('demo_po_network')]"/>
+        </function>
+        <function model="purchase.order" name="action_create_invoice">
+            <value eval="[ref('demo_po_south_america')]"/>
+        </function>
+        <function model="purchase.order" name="action_create_invoice">
+            <value eval="[ref('demo_po_us_smartphone')]"/>
+        </function>
+        <function model="purchase.order" name="action_create_invoice">
+            <value eval="[ref('demo_po_us_ev')]"/>
+        </function>
+
+        <!-- Set invoice dates -->
+        <function model="account.move" name="write">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-NAFTA')]"/>
+            <value eval="{'invoice_date': time.strftime('%Y-%m-%d')}"/>
+        </function>
+        <function model="account.move" name="write">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-EU')]"/>
+            <value eval="{'invoice_date': time.strftime('%Y-%m-%d')}"/>
+        </function>
+        <function model="account.move" name="write">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-ASIA')]"/>
+            <value eval="{'invoice_date': time.strftime('%Y-%m-%d')}"/>
+        </function>
+        <function model="account.move" name="write">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-NETWORK')]"/>
+            <value eval="{'invoice_date': time.strftime('%Y-%m-%d')}"/>
+        </function>
+        <function model="account.move" name="write">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-SOUTH-AMERICA')]"/>
+            <value eval="{'invoice_date': time.strftime('%Y-%m-%d')}"/>
+        </function>
+        <function model="account.move" name="write">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-US-SMARTPHONE')]"/>
+            <value eval="{'invoice_date': time.strftime('%Y-%m-%d')}"/>
+        </function>
+        <function model="account.move" name="write">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-US-EV')]"/>
+            <value eval="{'invoice_date': time.strftime('%Y-%m-%d')}"/>
+        </function>
+
+        <!-- Post the invoices -->
+        <function model="account.move" name="action_post">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-NAFTA')]"/>
+        </function>
+        <function model="account.move" name="action_post">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-EU')]"/>
+        </function>
+        <function model="account.move" name="action_post">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-ASIA')]"/>
+        </function>
+        <function model="account.move" name="action_post">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-NETWORK')]"/>
+        </function>
+        <function model="account.move" name="action_post">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-SOUTH-AMERICA')]"/>
+        </function>
+        <function model="account.move" name="action_post">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-US-SMARTPHONE')]"/>
+        </function>
+        <function model="account.move" name="action_post">
+            <value model="account.move" search="[('invoice_origin', '=', 'DEMO-PO-US-EV')]"/>
+        </function>
+    </data>
+</odoo>
