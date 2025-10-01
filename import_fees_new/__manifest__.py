@@ -2,7 +2,7 @@
 
 
 {
-    'name': "Customs Duties and Tariff Rates",
+    'name': "(NEW)Customs Duties and Tariff Rates",
     "live_test_url": "https://www.odooskillz.com/r/import_fees_17",
     'summary': """
         Customs duties and tariff calculation by HS Code.\n
