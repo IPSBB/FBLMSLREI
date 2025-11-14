@@ -1,0 +1,8 @@
+
+17.0.0.1 ==> Changes whole module code and also Fixed issue of when set config value after sometime schedual action can't be work properly.
+
+=> 17.0.0.3 :- Date 22 Jan 2025
+:- The schedule action did not work properly when selecting the minimum quantity based on reorder rules, and the emails were not going out, so I fixed it.
+
+
+17.0.0.4 ==> Fixed issue of when we archive or delete first id of product and run schedual action of low stock mail at that time traceback occurs.
