@@ -203,7 +203,14 @@ class StockLandedCost(models.Model):
 
     def _compute_cost(self, attr):
         for record in self:
-            record.__setattr__(attr, sum(self.cost_lines.filtered(lambda it: it.product_id.id == self.env.ref('import_fees.%s' % attr).id).mapped('price_unit')))
+            try:
+                product_ref = self.env.ref('import_fees.%s' % attr, raise_if_not_found=False)
+                if product_ref:
+                    record.__setattr__(attr, sum(self.cost_lines.filtered(lambda it: it.product_id.id == product_ref.id).mapped('price_unit')))
+                else:
+                    record.__setattr__(attr, 0.0)
+            except ValueError:
+                record.__setattr__(attr, 0.0)
 
     @api.onchange('picking_ids')
     def _onchange_picking_ids_vendor_bills(self):

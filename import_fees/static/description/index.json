@@ -120,13 +120,6 @@
       ]
     },
     {
-      "name": "Landed Costs Analysis Report",
-      "versions": [
-        "17",
-        "18"
-      ]
-    },
-    {
       "name": "Configuration option : Add 10% CIF in VAT, CESS LEVY and SSCL",
       "versions": [
         "17",

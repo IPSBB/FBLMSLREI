@@ -1,4 +1,3 @@
-
 .. |company| image:: icon-withtext.png
    :width: 5em
    :alt: Odoo Skillz

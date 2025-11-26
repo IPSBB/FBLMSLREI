@@ -5,8 +5,8 @@
     'name': "Customs Duties and Tariff Rates",
     "live_test_url": "https://www.odooskillz.com/r/import_fees_17",
     'summary': """
-        Customs duties and tariff calculation by HS Code.\n
-        Record Shipping fees for import or export taxes.\n
+        Customs duties and tariff calculation by HS Code.
+        Record Shipping fees for import or export taxes.
         Precise Odoo inventory valuation for Landed Costs purchase and sales.
         Harmonized system codes, excise duty, import duty, export duty, customs duty, and shipping fees for landed costs.
         Customs VAT calculation.
@@ -27,7 +27,7 @@
     'category': 'Inventory/Purchase',
     'price': 479.0,
     'currency':'USD',
-    'version': '17.0.1.1.53',
+    'version': '17.0.1.1.58',
     'support': 'contact@odooskillz.com',
 
     # any module necessary for this one to work correctly
