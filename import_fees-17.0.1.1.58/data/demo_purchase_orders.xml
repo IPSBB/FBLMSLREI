@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Purchase Orders -->
+        <!-- NAFTA Electric Generator Purchase Order -->
+        <record id="demo_po_nafta" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_canada"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="state">purchase</field>
+            <field name="date_order" eval="(datetime.now() - relativedelta(days=15)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="name">DEMO-PO-NAFTA</field>
+            <field name="currency_id" ref="base.CAD"/>
+        </record>
+
+        <record id="demo_po_line_nafta" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_nafta"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_motor_nafta'))], limit=1).id"/>
+            <field name="name">NAFTA Electric Generator</field>
+            <field name="product_qty">50</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">120.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.CAD"/>
+        </record>
+
+        <!-- EU Luxury Vehicle Parts Purchase Order -->
+        <record id="demo_po_eu" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_germany"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="state">purchase</field>
+            <field name="date_order" eval="(datetime.now() - relativedelta(days=14)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=9)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="name">DEMO-PO-EU</field>
+            <field name="currency_id" ref="base.EUR"/>
+        </record>
+
+        <record id="demo_po_line_eu" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_eu"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_vehicle_eu'))], limit=1).id"/>
+            <field name="name">EU Luxury Vehicle Parts</field>
+            <field name="product_qty">30</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">680.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=9)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.EUR"/>
+        </record>
+
+        <!-- Asia Portable Computer Purchase Order -->
+        <record id="demo_po_asia" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_china"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="state">purchase</field>
+            <field name="date_order" eval="(datetime.now() - relativedelta(days=13)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="name">DEMO-PO-ASIA</field>
+            <field name="currency_id" ref="base.CNY"/>
+        </record>
+
+        <record id="demo_po_line_asia" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_asia"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_laptop_asia'))], limit=1).id"/>
+            <field name="name">Asia Portable Computer</field>
+            <field name="product_qty">40</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">950.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=8)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.CNY"/>
+        </record>
+
+        <!-- Network Equipment Purchase Order -->
+        <record id="demo_po_network" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_japan"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="state">purchase</field>
+            <field name="date_order" eval="(datetime.now() - relativedelta(days=12)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="name">DEMO-PO-NETWORK</field>
+            <field name="currency_id" ref="base.JPY"/>
+        </record>
+
+        <record id="demo_po_line_router" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_network"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_router'))], limit=1).id"/>
+            <field name="name">Enterprise Router</field>
+            <field name="product_qty">25</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">980.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.JPY"/>
+        </record>
+
+        <record id="demo_po_line_switch" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_network"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_network_switch'))], limit=1).id"/>
+            <field name="name">Network Switch</field>
+            <field name="product_qty">35</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">350.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.JPY"/>
+        </record>
+
+        <!-- South America Agricultural Equipment Purchase Order -->
+        <record id="demo_po_south_america" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_brazil"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="state">purchase</field>
+            <field name="date_order" eval="(datetime.now() - relativedelta(days=11)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="name">DEMO-PO-SOUTH-AMERICA</field>
+            <field name="currency_id" ref="base.BRL"/>
+        </record>
+
+        <record id="demo_po_line_tractor" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_south_america"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_tractor'))], limit=1).id"/>
+            <field name="product_qty">5</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">12500.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.BRL"/>
+        </record>
+
+        <record id="demo_po_line_harvester" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_south_america"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_harvester'))], limit=1).id"/>
+            <field name="product_qty">3</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">18000.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.BRL"/>
+        </record>
+
+        <!-- US Smartphone Purchase Order -->
+        <record id="demo_po_us_smartphone" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_us_mobile"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="state">purchase</field>
+            <field name="date_order" eval="(datetime.now() - relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="name">DEMO-PO-US-SMARTPHONE</field>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <record id="demo_po_line_premium_phone" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_us_smartphone"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_smartphone'))], limit=1).id"/>
+            <field name="name">US Premium Smartphone</field>
+            <field name="product_qty">60</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">750.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <record id="demo_po_line_budget_phone" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_us_smartphone"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_budget_smartphone'))], limit=1).id"/>
+            <field name="name">US Budget Smartphone</field>
+            <field name="product_qty">100</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">280.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <!-- US Electric Car Purchase Order -->
+        <record id="demo_po_us_ev" model="purchase.order">
+            <field name="partner_id" ref="demo_vendor_us_ev"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="state">purchase</field>
+            <field name="date_order" eval="(datetime.now() - relativedelta(days=9)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="name">DEMO-PO-US-EV</field>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <record id="demo_po_line_electric_sedan" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_us_ev"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_electric_sedan'))], limit=1).id"/>
+            <field name="name">US Electric Sedan</field>
+            <field name="product_qty">8</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">38000.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <record id="demo_po_line_electric_suv" model="purchase.order.line">
+            <field name="order_id" ref="demo_po_us_ev"/>
+            <field name="product_id" model="product.product" eval="obj().search([('product_tmpl_id', '=', ref('demo_product_electric_suv'))], limit=1).id"/>
+            <field name="name">US Electric SUV</field>
+            <field name="product_qty">6</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="price_unit">52000.00</field>
+            <field name="date_planned" eval="(datetime.now() - relativedelta(days=4)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <!-- Confirm Purchase Orders -->
+        <function model="purchase.order" name="button_confirm">
+            <value eval="[ref('demo_po_nafta'), ref('demo_po_eu'), ref('demo_po_asia'), ref('demo_po_network'), ref('demo_po_south_america'), ref('demo_po_us_smartphone'), ref('demo_po_us_ev')]"/>
+        </function>
+    </data>
+</odoo>
