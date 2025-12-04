@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="pos_margin_products_report" model="ir.actions.report">
+        <field name="name">Selling Products Report Details</field>
+        <field name="model">report.egy_pos_margin_reports.report_margin_selling_products</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">egy_pos_margin_reports.report_margin_selling_products</field>
+    </record>
+</odoo>
