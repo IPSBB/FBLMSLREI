@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inheriting res.config.settings view form to add blocking limit -->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos.credit.limit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='content-group mt-2']" position="after">
+                <div class="row" title="Set it to 0 to disable the blocking feature; otherwise, it must be greater than the Default Credit Limit."
+                     invisible="not account_use_credit_limit">
+                    <label for="default_blocking_credit_limit" class="col-lg-4 o_light_label"/>
+                    <field name="default_blocking_credit_limit"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

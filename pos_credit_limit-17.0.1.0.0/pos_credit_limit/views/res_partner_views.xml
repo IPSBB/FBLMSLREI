@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inheriting res.partner view form to add blocking limit -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.views.form.inherit.pos.credit.limit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='credit_limits']" position="inside">
+                <label for="partner_block_credit"/>
+                <div class="o_row">
+                    <field name="partner_block_credit"/>
+                    <field name="blocking_credit_limit" class="oe_inline"
+                           invisible="not partner_block_credit"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

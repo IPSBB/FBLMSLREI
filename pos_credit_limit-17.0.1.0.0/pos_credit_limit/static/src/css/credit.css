@@ -1,0 +1,8 @@
+.pos .clientlist-screen .client-credit-details-left{
+    width: 50%;
+    float: left;
+    font-size: 16px;
+}
+.pos .clientlist-screen .client-credit-details-left .label{
+    color:red;
+}
