@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+<odoo>
+    <template id="pos_sales_report" name="pos sales report" inherit_id="point_of_sale.report_saledetails">
+        <xpath expr="//div[@id='sales']//table//thead//tr" position="inside">
+            <th>Cost Price</th>
+            <th>Margin</th>
+        </xpath>
+        <xpath expr="//div[@id='sales']//table//tbody/tr[1]/tr" position="before">
+            <td class="text-end" style="background-color: #dadada;">
+                <t t-if="currency['position']">
+                    <strong>
+                        <t t-esc='category["cost_price"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                        <t t-esc='currency["symbol"]' />
+                    </strong>
+                </t>
+                <t t-else="">
+                    <strong>
+                        <t t-esc='currency["symbol"]' />
+                        <t t-esc='category["cost_price"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                    </strong>
+                </t>
+            </td>
+            <td class="text-end" style="background-color: #dadada;">
+                <t t-if="currency['position']">
+                    <strong>
+                        <t t-esc='category["wk_margin"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                        <t t-esc='currency["symbol"]' />
+                    </strong>
+                </t>
+                <t t-else="">
+                    <strong>
+                        <t t-esc='currency["symbol"]' />
+                        <t t-esc='category["wk_margin"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                    </strong>
+                </t>
+            </td>
+        </xpath>
+
+        <xpath expr="//div[@id='sales']//table//tbody/tr[1]/tr" position="inside">
+            <td class="text-end">
+                <t t-if="currency['position']">
+                    <t t-esc='line["cost_price"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                    <t t-esc='currency["symbol"]' />
+                </t>
+                <t t-else="">
+                    <t t-esc='currency["symbol"]' />
+                    <t t-esc='line["cost_price"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                </t>
+            </td>
+            <td class="text-end">
+                <t t-if="currency['position']">
+                    <t t-esc='line["wk_margin"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                    <t t-esc='currency["symbol"]' />
+                </t>
+                <t t-else="">
+                    <t t-esc='currency["symbol"]' />
+                    <t t-esc='line["wk_margin"]' t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                </t>
+            </td>
+        </xpath>
+
+
+        <xpath expr="//div[@id='sales']//table//tbody/tr[2]" position="inside">
+            <td class="text-end" style="background-color: #b1b1b1;">
+                <t t-if="currency['position']">
+                    <strong>
+                        <t t-esc="products_info['total_cost']" t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                        <t t-esc='currency["symbol"]' />
+                    </strong>
+                </t>
+                <t t-else="">
+                    <strong>
+                        <t t-esc='currency["symbol"]' />
+                        <t t-esc="products_info['total_cost']" t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                    </strong>
+                </t>
+            </td>
+            <td class="text-end" style="background-color: #b1b1b1;">
+                <t t-if="currency['position']">
+                    <strong>
+                        <t t-esc="products_info['total_margin']" t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                        <t t-esc='currency["symbol"]' />
+                    </strong>
+                </t>
+                <t t-else="">
+                    <strong>
+                        <t t-esc='currency["symbol"]' />
+                      <t t-esc="products_info['total_margin']"  t-options="{'widget': 'float', 'precision': currency['precision']}"/>
+                    </strong>
+                </t>
+            </td>
+        </xpath>
+    </template>
+</odoo>
