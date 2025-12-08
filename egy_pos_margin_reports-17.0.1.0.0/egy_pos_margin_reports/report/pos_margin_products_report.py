@@ -26,10 +26,10 @@ class ReportPosMarginSellingProducts(models.AbstractModel):
                     uom.name AS uom, 
                     product.default_code AS code, 
                     product.barcode AS barcode, 
-                    (product.standard_price->>'1')::NUMERIC AS cost,
+                    (product.list_price->>'1')::NUMERIC AS cost,
                     line.price_unit AS price,
-                    (line.price_unit - (product.standard_price->>'1')::NUMERIC) AS margin,
-                    SUM((line.price_unit - (product.standard_price->>'1')::NUMERIC) * qty) AS total_margin,
+                    (line.price_unit - (product.list_price->>'1')::NUMERIC) AS margin,
+                    SUM((line.price_unit - (product.list_price->>'1')::NUMERIC) * qty) AS total_margin,
                     SUM(qty) AS qty, 
                     SUM(line.price_subtotal_incl) AS total 
                 FROM product_product AS product
@@ -38,7 +38,7 @@ class ReportPosMarginSellingProducts(models.AbstractModel):
                 JOIN uom_uom AS uom ON uom.id = template.uom_id 
                 WHERE line.order_id IN %s 
                 GROUP BY product.id, template.name, product.default_code, 
-                         uom.name, product.barcode, product.standard_price, 
+                         uom.name, product.barcode, product.list_price, 
                          template.list_price, line.price_unit
                 ORDER BY SUM(qty) DESC
             """
