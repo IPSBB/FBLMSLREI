@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Add custom js for pos_orders_all -->
+<!--        <template id="assets_for_pos_orders_all" inherit_id="point_of_sale.assets">-->
+<!--            <xpath expr="." position="inside">-->
+<!--                <script type="text/javascript" src="/ts_pos_profit_margin_report/static/src/js/pos.js"/>-->
+<!--                &lt;!&ndash; <script type="text/javascript" src="/pos_orders_all/static/src/js/jquery-barcode.min.js"/> &ndash;&gt;-->
+<!--            </xpath>-->
+<!--        </template>-->
+    </data>
+</odoo>
