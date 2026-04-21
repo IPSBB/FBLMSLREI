@@ -1,0 +1,147 @@
+<section class="oe_container oe_dark" style="overflow: hidden;
+background: #FFE4E1;
+border-radius: 15px;">
+    <div class="mt32 mb32">
+        <div class="col-md-12">
+            <h2 class="oe_slogan" style="font-family: Quicksand; font-color: #483D8B;; font-size: 35px;"><b>POS Gross
+                Profit Margin Report</b></h2>
+            <h3 class="oe_slogn" style="font-family: Quicksand; text-align: center;">The module's main purpose is to
+                generate a report that calculates and displays the gross profit margin in a POS system. This report is
+                essential for businesses to analyze the profitability of their sales by determining the difference
+                between the cost of goods sold and the revenue generated.
+            </h3>
+        </div>
+    </div>
+</section>
+<br/><br/>
+<section class="oe_container oe_dark">
+    <div class="alert" style="color: black;background-color: #FFE4E1;border-color: black;">
+        <i style="text-align:center; color: #483D8B;"></i><b> App Features</b>
+
+    </div>
+    <ul class="list-unstyled mr32 ml32">
+        <li><i class="fa fa-check" style="color: #483D8B;"></i><b>Accurate profit margin calculation:</b>  Calculates profit
+            margin based on precise cost of goods sold and revenue data.
+        </li>
+        <li><i class="fa fa-check" style="color: #483D8B;"></i><b>Comprehensive reports:</b>  Presents detailed and organized
+            reports for analyzing profitability across products, channels, and time periods.
+        </li>
+        <li><i class="fa fa-check" style="color: #483D8B;"></i><b>Seamless POS integration:</b> Integrates seamlessly with POS
+            systems, ensuring real-time data and easy access to profit margin reports.
+        </li>
+    </ul>
+    <div class="alert text-center mt32" style="background-color: #cddae8;border-color: black;">
+        <h1><b>POS Gross Profit Margin Report</b></h1>
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 2rem 3rem 1rem;">
+    <h2 style="font-weight: 600;text-align: center;width: 100%;">Screenshots</h2>
+    <div class="row">
+        <div class="col-lg-12 my-2">
+            <h4>Figure shows from where to print "POS Gross Profit Margin Report"</h4>
+            <img class="img-responsive img-thumbnail border" height="auto"
+                 src="images/pic1.png"
+                 width="100%"/>
+        </div>
+        <br><br><br>
+        <div class="col-lg-12 my-2">
+            <h4>Figure shows that you can print report by Dates, Pos Order, Company,Location, Customer and Product type.</h4>
+            <img class="img-responsive img-thumbnail border" height="auto"
+                 src="images/pic2.png"
+                 width="100%"/>
+        </div>
+        <br><br><br>
+        <div class="col-lg-12 my-2">
+            <h4>Here is the Printed Xlsx Report of "POS Gross Profit Margin Report".</h4>
+            <img class="img-responsive img-thumbnail border" height="auto"
+                 src="images/pic4.png"
+                 width="100%"/>
+        </div>
+        <br><br><br>
+
+
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 2rem 3rem 1rem;margin:0px">
+    <h2 style="font-weight: 600;margin-bottom: 20px;text-align: center;width: 100%;">Our Service</h2>
+    <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #0047ab;width: 5%;">
+    <div style="display: flex; width: 100%; padding-top: 20px;">
+        <div class="col-md-2 col-sm-6 col-xs-12" style="margin: 0% 5% 0% 5%;">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><img
+                    src="images/odoo-customization.png"
+                    style="width: 100%;border-radius: 100%;"/></div>
+            <h3 class="oe_slogan"
+                style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;">
+                <a style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                    Customization</a></h3>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12" style="margin: 0% 5% 0% 5%;">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a> <img
+                    src="images/odoo-erp-implementation.png"
+                    style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan"
+                style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;">
+                <a style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                    Odoo Implementation </a></h3>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12" style="margin: 0% 5% 0% 5%;">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a> <img
+                    src="images/odoo-erp-integration.png"
+                    style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan"
+                style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;">
+                <a style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                    Odoo Integration </a></h3>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12" style="margin: 0% 5% 0% 5%;">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a> <img
+                    src="images/odoo-erp-support.png"
+                    style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan"
+                style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;">
+                <a style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                    Functional & Technical Support</a></h3>
+        </div>
+    </div>
+</section>
+<!--Need Any Help-->
+<section class="oe_container" style="padding: 0% 0% 6% 0%;">
+    <div class="col-md-12"
+         style="margin: auto !important;width: 70%;padding: 30px;justify-content: center; text-align: center;">
+        <h2 style="font-weight: 600;text-align: center;width: 100%;">Need Any Help?</h2>
+        <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #0047ab;width: 5%;">
+        <h4 style="font-size:16px;"> If you have anything to share with us based on your use of this module,
+            please
+            let us know. We are ready to offer our support. </h4>
+        <div class="col-md-6" style="float:left; padding:20px;">
+            <h4><i class="fa fa-envelope"></i>Email us</h4>
+            <a href="https://www.teamup4solutions.com" target="_blank">info@teamup4solutions.com</a>
+        </div>
+        <div class="col-md-6" style="float:left; padding:20px;">
+            <h4><i class="fa fa-phone"></i> Contact us </h4>
+            <a href="https://www.teamup4solutions.com" target="_blank">+92 (301) 8800444 </a>
+        </div>
+    </div>
+</section>
+<!--ENDING SECTION-->
+<section class="oe_container" style="padding: 0% 0% 6% 0%;">
+    <div class="oe_slogan" style="margin-bottom: 0px;">
+        <img class="center-block"
+             src="https://teamup4solutions.com/web/image/470-169f30fd/logo.jpg"
+             style="width: 190px; margin-bottom: 25px;margin-top: 30px;">
+        <div style=" display: flex; justify-content: center; flex-wrap: wrap; ">
+            <a href="https://teamup4solutions.com/website/social/twitter" target="_blank"><i
+                    class="fa fa-2x fa-twitter"
+                    style="color:white;background: #00a0d1;width:35px;height: 35px;padding-top: 7px;font-size: 21px;margin-right: 6px;border-radius: 100%;"></i></a>
+            <a href="https://www.linkedin.com/company/81827451" target="_blank"><i
+                    class="fa fa-2x fa-linkedin"
+                    style="color:white;background: #31a3d6;width:35px;height: 35px;padding-top: 7px;font-size: 21px;margin-right: 6px;border-radius: 100%;"></i></a>
+            <a href="https://www.facebook.com/Team-up-4-Solutions-102943945183528" target="_blank"><i
+                    class="fa fa-2x fa-facebook"
+                    style="color:white;background: #3b5998;width:35px;  height: 35px;padding-top: 7px;font-size: 21px;margin-right: 6px;border-radius: 100%;"></i></a>
+        </div>
+    </div>
+</section>
+    
