@@ -48,8 +48,8 @@ class PosReportXLSX(models.AbstractModel):
             domain.append(('order_id.partner_id', 'in', data.get('partner_ids')))
         if data.get('pos_order_id', False):
             domain.append(('order_id', '=', data.get('pos_order_id')))
-        if data.get('company_id', False):
-            domain.append(('order_id.company_id', '=', data.get('company_id')))
+        if data.get('company_id', False) and data.get('company_id') != False:
+            domain.append(('order_id.company_id', '=', int(data.get('company_id'))))
         if data.get('location_id', False):
             domain.append(('order_id.picking_ids.location_id', '=', data.get('location_id')))
         if data.get('product_type', False):
@@ -233,7 +233,7 @@ class PosReportXLSX(models.AbstractModel):
         sheet.write(row + 1, 7, total_discount, footer_bold)
         sheet.write(row + 1, 8, total_taxes, footer_bold)
         sheet.write(row + 1, 9, total_price, footer_bold)
-        sheet.write(row + 1, 10, order_line.product_id.list_price, footer_per_bold)
+        sheet.write(row + 1, 10, '', footer_per_bold)
         sheet.write(row + 1, 12, total_gross_profit, footer_bold)
         length_of_orderlines = len(order_lines)
         if length_of_orderlines > 0:
