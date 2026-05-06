@@ -1,5 +1,5 @@
 {
-    'name': 'POS Gross Profit Margin Report',
+    'name': 'POS Gross Profit Margin Report NEW',
     'version': '17.0.0.1',
     'category': 'pos',
     'summary': 'Pos Gross Profit Margin Report',
