@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_recipe_product_wizard" model="ir.ui.view">
+            <field name="name">Recipe Product Wizard</field>
+            <field name="model">recipe.product.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Recipe Product">
+                    <group>
+                        <group>
+                            <field name="recipe_product_id"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string='Recipe Product'>
+                            <field name="recipe_product_ids" widget="many2many_list" nolabel="1">
+                                <tree editable="top" delete="false">
+                                    <field name="record_id" readonly="1" force_save="1" inivisible="1"/>
+                                    <field name="product_id" force_save="1"/>
+                                    <field name="location_id" force_save="1"/>
+                                    <field name="qty_to_consum"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <footer>
+                        <button name="update_recipe_structure" type="object" string="Update Recipe"
+                                class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_upd_recipe_product_wizard" model="ir.actions.act_window">
+            <field name="name">Update Recipe Product</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">recipe.product.wizard</field>
+            <field name="view_id" ref="view_recipe_product_wizard"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>
