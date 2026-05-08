@@ -1,7 +1,0 @@
-<odoo>
-    <data>
-        <!--   Operations Menus -->
-        <menuitem action="action_pos_gp_report_wizard" id="menu_pos_report_wizard" name="Pos Gross Profit Report"
-                  parent="point_of_sale.menu_point_rep" sequence="45" groups="base.group_user"/>
-    </data>
-</odoo>
