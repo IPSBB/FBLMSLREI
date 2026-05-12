@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_period_lock_user,account_period_lock_users,model_account_period_lock,base.group_user,1,0,0,0
+access_period_lock_special_permission,period_lock_special_permission,model_account_period_lock,cr_period_lock.group_period_lock_special_permission,1,1,1,1
